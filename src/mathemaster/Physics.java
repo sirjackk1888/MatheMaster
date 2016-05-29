@@ -5,9 +5,9 @@
  */
 package mathemaster;
 
-import java.util.*;
-
 public class Physics {
+    
+    ValidateInput runValidation = new ValidateInput();
     
     public void physicsController() {
        int userSelection = 0;
@@ -21,20 +21,16 @@ public class Physics {
         ""); // This is the list of installed modules. 
     //^^^^^^^^^^^^^^^^^^^^^^^^^^^Module list^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     
-        ValidateInput runValidation = new ValidateInput();
-        userSelection = runValidation.validateInput();
+        userSelection = runValidation.getUserSelection();
     //^^^^^^^^^^^^^^^^^^^^^Get valid user selection block^^^^^^^^^^^^^^^^^^^^^^^
         
         switch(userSelection) {
             case 1:
-                kinematics();
+                Kinematics runKinematics = new Kinematics();
+                runKinematics.kinematics();
                 break;
             
         } // This block runs the appropriate module, based on the user selection.
     //^^^^^^^^^^^^^^^^^^^^^^^^user selection and evaluation^^^^^^^^^^^^^^^^^^^^^
-    }
-    
-    public void kinematics() {
-        System.out.println("kinematics reached");
     }
 }
