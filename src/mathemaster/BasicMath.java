@@ -7,7 +7,7 @@ package mathemaster;
 
 public class BasicMath {
     
-    public void basicMath() {
+    public void basicMathController() {
         System.out.println("basic math reached - module under construction");
     }
 }
