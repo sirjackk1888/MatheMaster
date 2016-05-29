@@ -13,11 +13,8 @@ package mathemaster;
 import java.util.*;
 
 public class MatheMaster {
-
     public static void main(String[] args) {
-        int userSelection = 0,
-            returnVariable;
-        
+        int userSelection;
         System.out.println( "Welcome to the MatheMaster calculator!" + "\n" +
                             "This program will solve all manner of math based problems." + "\n" +
                             "First we need to find out what you would like to solve," + "\n" +
@@ -28,22 +25,13 @@ public class MatheMaster {
         System.out.print(   "#1: Basic Math"            + "\n" +
                             "#2: Advanced Mathematics"  + "\n" +
                             "#3: Physics"               + "\n" +
-                            "#4: Chemistry"             + "\n" +
+                            "#4: Economics"             + "\n" +
                             "#5: Sciences"              + "\n" +
         ""); // This is the list of installed modules. 
     //^^^^^^^^^^^^^^^^^^^^^^^^^^^Module list^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     
-        do {
-            System.out.println("Please enter the number for the module you would like to use");
-            Scanner keyboard = new Scanner(System.in);
-            try {
-                userSelection = Integer.parseInt(keyboard.nextLine());
-                returnVariable = 1;
-                } catch(NumberFormatException e) {
-                    System.out.println("Invalid input detected");
-                    returnVariable = 0;
-                } 
-        }while(returnVariable == 0); // this try/catch block gets the user selection and converts to a numeric value.
+        ValidateInput runValidation = new ValidateInput();
+        userSelection = runValidation.validateInput();
     //^^^^^^^^^^^^^^^^^^^^^Get valid user selection block^^^^^^^^^^^^^^^^^^^^^^^
         
         switch(userSelection) {
@@ -60,8 +48,8 @@ public class MatheMaster {
                 runPhysics.physicsController();
                 break;
             case 4:
-                Chemistry runChemistry = new Chemistry();
-                runChemistry.chemistryController();
+                Economics runEconomics = new Economics();
+                runEconomics.economicsController();
                 break;
             case 5:
                 Sciences runSciences = new Sciences();
