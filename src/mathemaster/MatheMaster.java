@@ -25,8 +25,11 @@ public class MatheMaster {
         ); // This is the header and instruction block outprinted to the user.
     //^^^^^^^^^^^^^^^^^^^^^^^^^Welcome message^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     
-        System.out.print(   "#1: Basic math" + "\n" +
-                            "#2: Geometry" + "\n" +
+        System.out.print(   "#1: Basic Math"            + "\n" +
+                            "#2: Advanced Mathematics"  + "\n" +
+                            "#3: Physics"               + "\n" +
+                            "#4: Chemistry"             + "\n" +
+                            "#5: Sciences"              + "\n" +
         ""); // This is the list of installed modules. 
     //^^^^^^^^^^^^^^^^^^^^^^^^^^^Module list^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     
@@ -46,11 +49,23 @@ public class MatheMaster {
         switch(userSelection) {
             case 1:
                 BasicMath runBasicMath = new BasicMath();
-                runBasicMath.basicMath();
+                runBasicMath.basicMathController();
                 break;
             case 2:
-                Geometry runGeometry = new Geometry();
-                runGeometry.geometry();
+                AdvancedMathematics runAdvancedMathematics = new AdvancedMathematics();
+                runAdvancedMathematics.advancedMathematicsController();
+                break;
+            case 3:
+                Physics runPhysics = new Physics();
+                runPhysics.physicsController();
+                break;
+            case 4:
+                Chemistry runChemistry = new Chemistry();
+                runChemistry.chemistryController();
+                break;
+            case 5:
+                Sciences runSciences = new Sciences();
+                runSciences.sciencesController();
                 break;
         } // This block runs the appropriate module, based on the user selection.
     //^^^^^^^^^^^^^^^^^^^^^^^^user selection and evaluation^^^^^^^^^^^^^^^^^^^^^
