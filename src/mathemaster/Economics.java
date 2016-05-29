@@ -5,9 +5,9 @@
  */
 package mathemaster;
 
-import java.util.*;
-
 public class Economics {
+    
+    ValidateInput runValidation = new ValidateInput();
     
     public void economicsController() {
         int userSelection = 0;
@@ -21,8 +21,7 @@ public class Economics {
         ""); // This is the list of installed modules. 
     //^^^^^^^^^^^^^^^^^^^^^^^^^^^Module list^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     
-        ValidateInput runValidation = new ValidateInput();
-        userSelection = runValidation.validateInput();
+        userSelection = runValidation.getUserSelection();
     //^^^^^^^^^^^^^^^^^^^^^Get valid user selection block^^^^^^^^^^^^^^^^^^^^^^^
         
         switch(userSelection) {
