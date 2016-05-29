@@ -9,6 +9,9 @@ import java.util.*;
 
 public class BasicMath {
     
+    ValidateInput runValidation = new ValidateInput();
+    List<Double> userNumber = new ArrayList<>();
+    
     public void basicMathController() {
         int userSelection = 0;
         
@@ -24,8 +27,7 @@ public class BasicMath {
         ""); // This is the list of installed modules. 
     //^^^^^^^^^^^^^^^^^^^^^^^^^^^Module list^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     
-        ValidateInput runValidation = new ValidateInput();
-        userSelection = runValidation.validateInput();
+        userSelection = runValidation.getUserSelection();
     //^^^^^^^^^^^^^^^^^^^^^Get valid user selection block^^^^^^^^^^^^^^^^^^^^^^^
         
         switch(userSelection) {
@@ -46,19 +48,33 @@ public class BasicMath {
     //^^^^^^^^^^^^^^^^^^^^^^^^user selection and evaluation^^^^^^^^^^^^^^^^^^^^^
     }
     
+    
+    public void populateArray() {
+        System.out.println("Please enter the numbers to be converted, "
+            + "enter the first number and press return, "
+            + "then enter the second number and press return");
+        
+        for(int i=0; i < 2; i++){
+            userNumber.add(runValidation.validateInput());
+        }
+    }
     public void addition() {
-    System.out.println("addition reached");
+        populateArray();
+        System.out.println((userNumber.get(0)) + (userNumber.get(1)));
     }
     
     public void subtraction() {
-    System.out.println("subtraction reached");
+        populateArray();
+        System.out.println(((userNumber.get(0)) - (userNumber.get(1))));
     }
     
     public void multiplication() {
-    System.out.println("multiplication reached");
+        populateArray();
+        System.out.println(((userNumber.get(0)) * (userNumber.get(1))));
     }
     
     public void division() {
-    System.out.println("division reached");
+        populateArray();
+        System.out.println(((userNumber.get(0)) / (userNumber.get(1))));
     }
 }
