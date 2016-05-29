@@ -9,6 +9,8 @@ import java.util.*;
 
 public class AdvancedMathematics {
     
+    ValidateInput runValidation = new ValidateInput();
+    
     public void advancedMathematicsController() {
         int userSelection = 0;
         
@@ -25,8 +27,7 @@ public class AdvancedMathematics {
         ""); // This is the list of installed modules. 
     //^^^^^^^^^^^^^^^^^^^^^^^^^^^Module list^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     
-        ValidateInput runValidation = new ValidateInput();
-        userSelection = runValidation.validateInput();
+        userSelection = runValidation.getUserSelection();
     //^^^^^^^^^^^^^^^^^^^^^Get valid user selection block^^^^^^^^^^^^^^^^^^^^^^^
         
         switch(userSelection) {
@@ -37,6 +38,18 @@ public class AdvancedMathematics {
             case 2:
                 Algebra runAlgebra = new Algebra();
                 runAlgebra.algebra();
+                break;
+            case 3:
+                Trigonometry runTrigonometry = new Trigonometry();
+                runTrigonometry.trigonometry();
+                break;
+            case 4:
+                Calculus runCalculus = new Calculus();
+                runCalculus.calculus();
+                break;
+            case 5:
+                Statistics runStatistics = new Statistics();
+                runStatistics.statistics();
                 break;
             
         } // This block runs the appropriate module, based on the user selection.
