@@ -14,6 +14,7 @@ import java.util.*;
 
 public class MatheMaster {
     public static void main(String[] args) {
+        ValidateInput runValidation = new ValidateInput();
         int userSelection;
         System.out.println( "Welcome to the MatheMaster calculator!" + "\n" +
                             "This program will solve all manner of math based problems." + "\n" +
@@ -30,8 +31,7 @@ public class MatheMaster {
         ""); // This is the list of installed modules. 
     //^^^^^^^^^^^^^^^^^^^^^^^^^^^Module list^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     
-        ValidateInput runValidation = new ValidateInput();
-        userSelection = runValidation.validateInput();
+        userSelection = runValidation.getUserSelection();
     //^^^^^^^^^^^^^^^^^^^^^Get valid user selection block^^^^^^^^^^^^^^^^^^^^^^^
         
         switch(userSelection) {
