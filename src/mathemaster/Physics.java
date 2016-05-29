@@ -5,9 +5,36 @@
  */
 package mathemaster;
 
+import java.util.*;
+
 public class Physics {
     
     public void physicsController() {
-        System.out.println("physics reached - module under construction");
+       int userSelection = 0;
+        
+        System.out.println( "Welcome to the Physics module!" + "\n" +
+                            "The current installed modules are:"
+        ); // This is the header and instruction block outprinted to the user.
+    //^^^^^^^^^^^^^^^^^^^^^^^^^Welcome message^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    
+        System.out.print(   "#1: Kinematics" + "\n" +
+        ""); // This is the list of installed modules. 
+    //^^^^^^^^^^^^^^^^^^^^^^^^^^^Module list^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    
+        ValidateInput runValidation = new ValidateInput();
+        userSelection = runValidation.validateInput();
+    //^^^^^^^^^^^^^^^^^^^^^Get valid user selection block^^^^^^^^^^^^^^^^^^^^^^^
+        
+        switch(userSelection) {
+            case 1:
+                kinematics();
+                break;
+            
+        } // This block runs the appropriate module, based on the user selection.
+    //^^^^^^^^^^^^^^^^^^^^^^^^user selection and evaluation^^^^^^^^^^^^^^^^^^^^^
+    }
+    
+    public void kinematics() {
+        System.out.println("kinematics reached");
     }
 }
