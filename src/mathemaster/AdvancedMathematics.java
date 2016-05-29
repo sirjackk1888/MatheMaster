@@ -5,8 +5,6 @@
  */
 package mathemaster;
 
-import java.util.*;
-
 public class AdvancedMathematics {
     
     ValidateInput runValidation = new ValidateInput();
@@ -55,6 +53,4 @@ public class AdvancedMathematics {
         } // This block runs the appropriate module, based on the user selection.
     //^^^^^^^^^^^^^^^^^^^^^^^^user selection and evaluation^^^^^^^^^^^^^^^^^^^^^
     }
-    
-    
 }
